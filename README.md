@@ -9,8 +9,8 @@ This study evaluates instruction-tuned Small Language Models (SLMs) for context-
 ## Key Features
 
 - **Synthetic Dataset Pipeline**: Transforms single-turn QA into multi-turn conversations with context summarization
-- **Comprehensive Evaluation**: Combines automatic metrics with qualitative assessments
-- **Stage-Based Analysis**: Evaluates model performance across early, mid, and late conversation stages
+- **Comprehensive Evaluation**: Combines automatic metrics with qualitative assessments (lexical, semantic, LLM-as-a-judge, human evaluation)
+- **Stage-Based Evaluation Framework**: Novel conversation stage segmentation (Early/Mid/Late) to analyze model behavior across different phases of customer service interactions
 - **Fine-Tuning Framework**: QLoRA-based parameter-efficient fine-tuning for SLMs
 
 ## Models Evaluated
@@ -50,8 +50,9 @@ This study evaluates instruction-tuned Small Language Models (SLMs) for context-
 
 - Leading 3-8B SLMs achieve near-LLM performance on automatic metrics
 - LLaMA-3.2-3B-Instruct, Qwen-3-4B-Instruct, and Phi-4-Mini show strong human-likeness and tone
-- Stage-based analysis reveals competitive performance in mid-stage interactions
-- Context summarization enables effective multi-turn dialogue handling
+- **Stage-based analysis reveals competitive performance in mid-stage interactions** where contextual reasoning is most critical
+- Late-stage performance shows SLMs excel at resolution-focused responses
+- Context summarization enables effective multi-turn dialogue handling with reduced context length
 
 ## Dataset
 
@@ -83,6 +84,23 @@ The dataset is constructed from the Customer Service Banking Conversation Corpus
 2. Continuity and Context Understanding
 3. Tone and Clarity
 4. Task Appropriateness
+
+## Stage-Based Evaluation
+
+A key contribution of this work is the **conversation stage-based evaluation framework** that segments interactions into three distinct phases:
+
+### Conversation Stages
+- **Early Stage (10%)**: Issue identification and initial context gathering
+- **Mid Stage (80%)**: Core interaction with substantive information exchange - requires strongest contextual reasoning
+- **Late Stage (10%)**: Resolution and closure
+
+### Stage-Based Insights
+- **Early Stage**: Top SLMs show competitive issue identification (scores: 3.7-3.8)
+- **Mid Stage**: LLaMA-3.1-8B and Qwen-3-8B remain competitive with commercial LLMs
+- **Late Stage**: SLMs demonstrate strongest performance with resolution-focused responses (scores above 4.1)
+- Stage-wise pairwise evaluation reveals SLMs are most competitive in mid-stage interactions where context maintenance is critical
+
+This segmentation enables targeted analysis beyond overall performance scores, identifying which models excel at specific conversation phases.
 
 ## Training Configuration
 
