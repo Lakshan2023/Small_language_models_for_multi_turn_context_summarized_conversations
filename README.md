@@ -1,4 +1,4 @@
-# Small Language Models for Customer Service QA
+# Small Language Models for Multi-turn Context-Summarized Customer Service QA
 
 This repository contains the code and evaluation framework for research on evaluating Small Language Models for context-summarized multi-turn customer service question answering.
 
