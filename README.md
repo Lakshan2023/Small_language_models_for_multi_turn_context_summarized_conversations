@@ -117,10 +117,14 @@ This segmentation enables targeted analysis beyond overall performance scores, i
 If you use this work, please cite:
 
 ```bibtex
-@misc{slm_customer_service_qa,
-  title={Can Small Language Models Handle Context-Summarized Multi-Turn Customer-Service QA? A Synthetic Data-Driven Comparative Evaluation},
-  author={Research Team},
-  year={2026}
+@misc{cooray2026smalllanguagemodelshandle,
+      title={Can Small Language Models Handle Context-Summarized Multi-Turn Customer-Service QA? A Synthetic Data-Driven Comparative Evaluation}, 
+      author={Lakshan Cooray and Deshan Sumanathilaka and Pattigadapa Venkatesh Raju},
+      year={2026},
+      eprint={2602.00665},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.00665}, 
 }
 ```
 
