@@ -31,14 +31,17 @@ This study evaluates instruction-tuned Small Language Models (SLMs) for context-
 
 ```
 ├── DatasetCreation/
-│   ├── CustomerSupportDataset.ipynb    # Dataset construction pipeline
-│   └── context-summary-generation.ipynb # Context summarization
+│   ├── CustomerSupportDataset.ipynb
+│   └── context-summary-generation.ipynb
 │
-├── SLMsFintuning/
+├── InferenceCostBenchmark/
+│   └── [cost and latency benchmarking scripts / notebooks]
+│
+├── SLMsFinetuning/
 │   └── [model fine-tuning notebooks]
 │
 ├── ModelDecodingEvaluation/
-│   └── [model evaluation notebooks]
+│   └── [model decoding & quality evaluation]
 │
 └── OverallEvaluationResults/
     ├── HumanEvaluation.ipynb
