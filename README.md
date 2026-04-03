@@ -135,15 +135,22 @@ Inference was conducted on the full test split (36,669 instances) using a maximu
 
 ### Quantitative Evaluation (Full Test Set — 36,669 instances)
 
-| Model | ROUGE-L | METEOR | BARTScore | BERTScore F1 | Cosine Sim. |
-|---|---|---|---|---|---|
-| **Qwen-3-4B-Instruct** | **0.3959** | 0.4455 | **-2.2311** | **0.9137** | 0.6972 |
+| Model | ROUGE-L (↑) | METEOR (↑) | BARTScore (↑) | BERTScore F1 (↑) | Cosine Sim. (↑) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| LLaMA-3.2-1B-Instruct | 0.2332 | 0.3032 | -2.7060 | 0.8821 | 0.5909 |
+| Qwen-3-1.7B-Instruct | 0.3697 | 0.4138 | -2.3096 | 0.9096 | 0.6731 |
 | LLaMA-3.2-3B-Instruct | 0.3842 | 0.4471 | -2.2655 | 0.9121 | 0.6958 |
-| **LLaMA-3.1-8B-Instruct** | 0.3940 | **0.4569** | -2.2332 | 0.9134 | **0.7051** |
+| SmolLM3-3B | 0.2393 | 0.3022 | -2.7699 | 0.8830 | 0.5428 |
 | Phi-4-Mini (3.8B) | 0.3747 | 0.4303 | -2.2872 | 0.9107 | 0.6891 |
+| Qwen-3-4B-Instruct | **0.3959** | 0.4455 | **-2.2311** | **0.9137** | 0.6972 |
+| Gemma-3-4B-Instruct | 0.2024 | 0.2782 | -3.0766 | 0.8752 | 0.5134 |
+| LLaMA-3.1-8B-Instruct | 0.3940 | **0.4569** | -2.2332 | 0.9134 | **0.7051** |
+| Qwen-3-8B-Instruct | 0.3121 | 0.3792 | -2.4970 | 0.8995 | 0.6621 |
 | GPT-4.1 | 0.3038 | 0.3685 | -2.5145 | 0.8994 | 0.6749 |
 | Gemini-2.5-Flash | 0.2771 | 0.3110 | -2.6409 | 0.8942 | 0.6234 |
 | Virtuoso-Large | 0.3161 | 0.3770 | -2.4625 | 0.9011 | 0.6676 |
+
+*Comparison of lexical and semantic similarity results on the complete test set. Models are grouped by size: small models (<4B), 8B models, and commercial LLMs.*
 
 Fine-tuned SLMs consistently outperform commercial LLMs on quantitative metrics due to domain-specific fine-tuning alignment with reference responses.
 
