@@ -198,8 +198,6 @@ Fine-tuned SLMs consistently outperform commercial LLMs on quantitative metrics 
 
 Selected highlights (SLM win % against commercial LLMs):
 
-### Pairwise LLM vs. SLM Evaluation
-
 | LLM | SLM | LLM Wins (%) | SLM Wins (%) | Ties (%) |
 | :--- | :--- | :---: | :---: | :---: |
 | Gemini-2.5-Flash | LLaMA-3.2-1B-Instruct | 43.10 | 38.60 | 18.30 |
@@ -232,14 +230,46 @@ LLaMA-3.1-8B and Qwen-3-8B both outperform Gemini-2.5-Flash in direct pairwise c
 
 ### Stage-wise Performance Summary (LLM-as-a-Judge Overall Mean)
 
-| Model | Early-Stage | Mid-Stage | Late-Stage |
-|---|---|---|---|
-| GPT-4.1 | 4.106 | 4.115 | **4.432** |
-| LLaMA-3.1-8B-Instruct | 3.819 | 3.737 | 4.229 |
-| LLaMA-3.2-3B-Instruct | 3.800 | 3.648 | 4.200 |
-| Qwen-3-4B-Instruct | 3.764 | 3.609 | 4.154 |
-| Phi-4-Mini | 3.700 | 3.545 | 4.121 |
-| Gemini-2.5-Flash | 3.862 | 3.752 | 3.818 |
+| Stage | Model | Human Likeness | Continuity & Context Understanding | Tone & Clarity | Task Appropriateness | Overall Mean |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Early-stage** | LLaMA-3.2-1B-Instruct | 3.625 | 2.927 | 3.725 | 2.583 | 3.215 |
+| | Qwen-3-1.7B-Instruct | 3.880 | 3.508 | 3.957 | 3.145 | 3.622 |
+| | LLaMA-3.2-3B-Instruct | 4.125 | 3.625 | 4.160 | 3.288 | 3.800 |
+| | SmolLM3-3B | 2.227 | 1.578 | 2.290 | 1.503 | 1.900 |
+| | Qwen-3-4B-Instruct | 4.100 | 3.575 | 4.130 | 3.253 | 3.764 |
+| | Phi-4-Mini | 4.058 | 3.473 | 4.113 | 3.158 | 3.700 |
+| | Gemma-3-4B-Instruct | 2.517 | 1.553 | 2.557 | 1.508 | 2.034 |
+| | LLaMA-3.1-8B-Instruct | 4.152 | 3.613 | 4.202 | 3.310 | 3.819 |
+| | Qwen-3-8B-Instruct | 3.932 | 3.513 | 4.038 | 3.175 | 3.665 |
+| | GPT-4.1 | **4.310** | **4.018** | **4.383** | **3.715** | **4.106** |
+| | Virtuoso-Large | 4.157 | 3.750 | 4.185 | 3.425 | 3.879 |
+| | Gemini-2.5-Flash | 4.143 | 3.768 | 4.185 | 3.350 | 3.862 |
+| **Mid-Stage** | LLaMA-3.2-1B-Instruct | 3.139 | 2.327 | 3.315 | 2.150 | 2.733 |
+| | Qwen-3-1.7B-Instruct | 3.684 | 3.277 | 3.766 | 2.900 | 3.407 |
+| | LLaMA-3.2-3B-Instruct | 4.034 | 3.388 | 4.065 | 3.104 | 3.648 |
+| | SmolLM3-3B | 2.738 | 1.806 | 2.798 | 1.719 | 2.265 |
+| | Qwen-3-4B-Instruct | 4.001 | 3.342 | 4.030 | 3.061 | 3.609 |
+| | Phi-4-Mini | 3.943 | 3.267 | 3.991 | 2.980 | 3.545 |
+| | Gemma-3-4B-Instruct | 2.618 | 1.737 | 2.624 | 1.659 | 2.160 |
+| | LLaMA-3.1-8B-Instruct | 4.077 | 3.525 | 4.111 | 3.236 | 3.737 |
+| | Qwen-3-8B-Instruct | 3.924 | 3.625 | 4.052 | 3.249 | 3.712 |
+| | GPT-4.1 | **4.286** | **4.056** | **4.355** | **3.764** | **4.115** |
+| | Virtuoso-Large | 4.137 | 3.835 | 4.173 | 3.470 | 3.904 |
+| | Gemini-2.5-Flash | 4.039 | 3.759 | 4.081 | 3.127 | 3.752 |
+| **Late-stage** | LLaMA-3.2-1B-Instruct | 2.910 | 2.033 | 3.173 | 1.930 | 2.512 |
+| | Qwen-3-1.7B-Instruct | 4.032 | 3.902 | 4.095 | 3.591 | 3.905 |
+| | LLaMA-3.2-3B-Instruct | 4.357 | 4.068 | 4.373 | 4.002 | 4.200 |
+| | SmolLM3-3B | 2.410 | 1.688 | 2.500 | 1.700 | 2.074 |
+| | Qwen-3-4B-Instruct | 4.335 | 3.993 | 4.340 | 3.950 | 4.154 |
+| | Phi-4-Mini | 4.273 | 3.983 | 4.297 | 3.932 | 4.121 |
+| | Gemma-3-4B-Instruct | 2.363 | 1.843 | 2.418 | 1.945 | 2.142 |
+| | LLaMA-3.1-8B-Instruct | 4.386 | 4.102 | 4.397 | 4.030 | 4.229 |
+| | Qwen-3-8B-Instruct | 4.182 | 3.967 | 4.212 | 3.885 | 4.062 |
+| | GPT-4.1 | **4.563** | **4.323** | **4.588** | **4.253** | **4.432** |
+| | Virtuoso-Large | 4.453 | 4.212 | 4.468 | 4.115 | 4.312 |
+| | Gemini-2.5-Flash | 4.085 | 3.577 | 4.177 | 3.433 | 3.818 |
+
+*Stage-wise LLM-as-a-judge evaluation results across early, mid, and late-stage customer-service interactions using a 5-point Likert scale. Scores are averaged over 6,000 evaluation samples, with 600 early-stage, 4,800 mid-stage, and 600 late-stage instances.*
 
 SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactions. LLaMA-3.1-8B-Instruct surpasses Gemini-2.5-Flash in Late-stage (4.229 vs 3.818).
 
