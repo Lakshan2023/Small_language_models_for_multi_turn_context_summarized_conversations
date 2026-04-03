@@ -158,16 +158,22 @@ Fine-tuned SLMs consistently outperform commercial LLMs on quantitative metrics 
 
 ### LLM-as-a-Judge Evaluation (Claude Sonnet 4.5 — 6,000 samples per model, 1–5 Likert scale)
 
-| Model | Human-Likeness | Continuity & Context | Tone & Clarity | Task Appropriateness | Overall Mean |
-|---|---|---|---|---|---|
-| **GPT-4.1** | **4.316** | **4.079** | **4.381** | **3.808** | **4.146** |
-| Virtuoso-Large | 4.171 | 3.864 | 4.204 | 3.530 | 3.942 |
-| Gemini-2.5-Flash | 4.054 | 3.742 | 4.101 | 3.180 | 3.769 |
+| Model | Human Likeness | Continuity & Context Understanding | Tone & Clarity | Task Appropriateness | Overall Mean |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| LLaMA-3.2-1B-Instruct | 3.165 | 2.358 | 3.342 | 2.171 | 2.759 |
+| Qwen-3-1.7B-Instruct | 3.738 | 3.362 | 3.818 | 2.994 | 3.478 |
+| SmolLM3-3B | 2.654 | 1.772 | 2.717 | 1.696 | 2.210 |
+| LLaMA-3.2-3B-Instruct | 4.075 | 3.480 | 4.105 | 3.212 | 3.718 |
+| Phi-4-Mini (3.8B) | 3.988 | 3.360 | 4.034 | 3.093 | 3.619 |
+| Qwen-3-4B-Instruct | 4.044 | 3.430 | 4.071 | 3.170 | 3.679 |
+| Gemma-3-4B-Instruct | 2.582 | 1.729 | 2.597 | 1.673 | 2.145 |
 | LLaMA-3.1-8B-Instruct | 4.115 | 3.591 | 4.149 | 3.322 | 3.794 |
 | Qwen-3-8B-Instruct | 3.950 | 3.648 | 4.067 | 3.306 | 3.743 |
-| LLaMA-3.2-3B-Instruct | 4.075 | 3.480 | 4.105 | 3.212 | 3.718 |
-| Qwen-3-4B-Instruct | 4.044 | 3.430 | 4.071 | 3.170 | 3.679 |
-| Phi-4-Mini (3.8B) | 3.988 | 3.360 | 4.034 | 3.093 | 3.619 |
+| GPT-4.1 | **4.316** | **4.079** | **4.381** | **3.808** | **4.146** |
+| Gemini-2.5-Flash | 4.054 | 3.742 | 4.101 | 3.180 | 3.769 |
+| Virtuoso-Large | 4.171 | 3.864 | 4.204 | 3.530 | 3.942 |
+
+*Overall LLM-as-a-judge evaluation results across four qualitative dimensions using a 5-point Likert scale. Models are grouped by size: small models (<4B), 8B models, and commercial LLMs.*
 
 ---
 
