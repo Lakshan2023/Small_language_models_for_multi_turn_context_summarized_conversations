@@ -179,14 +179,18 @@ Fine-tuned SLMs consistently outperform commercial LLMs on quantitative metrics 
 
 ### Human Evaluation (3 Independent Evaluators — 500 samples per model, 1–5 Likert scale)
 
-| Model | Human-Likeness | Continuity & Context | Tone & Clarity | Task Appropriateness | Overall Mean |
-|---|---|---|---|---|---|
-| **GPT-4.1** | **4.674** | **4.827** | **4.722** | **4.286** | **4.627** |
-| Virtuoso-Large | 4.507 | 4.726 | 4.637 | 4.249 | 4.529 |
-| Gemini-2.5-Flash | 4.181 | 4.567 | 4.247 | 3.770 | 4.191 |
+-| Model | Human Likeness | Continuity & Context Understanding | Tone & Clarity | Task Appropriateness | Overall Mean |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| SmolLM3-3B | 3.003 | 2.615 | 2.965 | 2.261 | 2.711 |
 | LLaMA-3.2-3B-Instruct | 4.250 | 4.325 | 4.286 | 3.721 | 4.146 |
-| Qwen-3-4B-Instruct | 4.203 | 4.264 | 4.230 | 3.579 | 4.069 |
 | Phi-4-Mini (3.8B) | 4.164 | 4.303 | 4.215 | 3.553 | 4.059 |
+| Qwen-3-4B-Instruct | 4.203 | 4.264 | 4.230 | 3.579 | 4.069 |
+| Gemma-3-4B-Instruct | 3.110 | 2.520 | 2.968 | 2.146 | 2.686 |
+| GPT-4.1 | **4.674** | **4.827** | **4.722** | **4.286** | **4.627** |
+| Gemini-2.5-Flash | 4.181 | 4.567 | 4.247 | 3.770 | 4.191 |
+| Virtuoso-Large | 4.507 | 4.726 | 4.637 | 4.249 | 4.529 |
+
+*Overall Human evaluation results across four qualitative dimensions using a 5-point Likert scale.
 
 ---
 
