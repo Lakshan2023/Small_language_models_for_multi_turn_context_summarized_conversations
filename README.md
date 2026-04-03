@@ -393,6 +393,28 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 *Inference performance metrics across different model sizes. Models are grouped by size: small models (<4B) and 8B models. Lower values indicate better performance for all metrics.*
 
+## Ablation Study: SLM-based Context Summarization
+
+**Goal:** To determine whether fine-tuned SLMs can effectively replace commercial LLMs in generating accurate and coherent context summaries for multi-turn customer service conversations.
+
+**Models Evaluated:** LLaMA-3.1-8B-Instruct, LLaMA-3.2-3B-Instruct, Phi-4-Mini, Qwen-3-4B-Instruct, and Qwen-3-8B-Instruct (evaluated against Gemini-2.5-Flash and GPT-4.1).
+
+**Dataset:**
+- Created from a random selection of 50,000 unique conversations from the main multi-turn corpus.
+- **Splits:** 35,000 Training (70%), 5,000 Validation (10%), and 10,000 Test (20%).
+- **Link:** [Lakshan2003/customer-support-context-summary-50k](https://huggingface.co/datasets/Lakshan2003/customer-support-context-summary-50k)
+
+**Parameter-Efficient Fine-Tuning (QLoRA):**
+- **LoRA Configuration:** Adapters applied to query, key, value, and output projection layers (Rank = 8, Alpha = 16, Dropout = 0.1).
+- **Hyperparameters:** Max sequence length of 1,024 tokens, AdamW 8-bit optimizer, learning rate of 2×10⁻⁵ (cosine scheduler, warmup 0.05), 3 epochs, and an effective batch size of 16.
+
+**Evaluation Framework:**
+- **Quantitative Evaluation (10,000 test instances):** Lexical and semantic overlap assessed using BLEU, METEOR, ROUGE-L, Cosine Similarity, BERTScore F1, and BARTScore.
+- **Qualitative Evaluation (1,000 test subset):** LLM-as-a-judge framework using Claude Sonnet 4.5 on a 1–5 Likert scale across three dimensions:
+  1. **Information Accuracy:** Correctly capturing key facts (names, accounts, dates, verification steps).
+  2. **Structural Clarity:** Logical and clear organization of the client's issue and current status.
+  3. **Faithfulness:** Strict adherence to the original conversation without introducing unsupported assumptions.
+
 
 ## Citation
 
