@@ -100,6 +100,21 @@ This study evaluates instruction-tuned Small Language Models (SLMs) for context-
 └── README.md
 ```
 
+## Dataset
+
+The synthetic dataset is constructed from the Hugging Face TalkMap Customer Service Banking Conversation Corpus.
+
+![Synthetic Context-Summarized Multi-turn QA pipeline](figures/datapipeline.png)
+
+**Construction Pipeline:**
+1. **Preprocessing and Filtering:** Retained conversations ranging from 5 to 100 turns to ensure realistic dialogue depth and applied Regex-based noise removal.
+2. **Multi-Turn Construction:** Aggregated sequential single turns into complete dialogues, applied de-duplication, and partitioned conversations into early (20%), middle (70%), and late (10%) segments.
+3. **Context Summarization:** Summarized prior conversational histories using GPT-4o-mini to condense token length while preserving essential facts, names, and verification steps.
+4. **Response Refinement & Moderation:** Enhanced agent answers for naturalness, clarity, and contextual coherence using GPT-4.1, followed by safety filtering using OpenAI’s Moderation API.
+5. **Structured Instance Formation:** Assembled standard QA instances (instruction, summarized history, current query, refined response) and divided them into standard splits.
+
+ The created dataset is publicly available at: [Lakshan2003/customer-support-client-agent-conversations](https://huggingface.co/datasets/Lakshan2003/customer-support-client-agent-conversations).
+
 ## Key Results (Summary)
 
 ### Quantitative Evaluation (Full Test Set — 36,669 instances)
