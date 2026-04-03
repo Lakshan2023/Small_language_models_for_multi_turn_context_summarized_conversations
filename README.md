@@ -198,13 +198,33 @@ Fine-tuned SLMs consistently outperform commercial LLMs on quantitative metrics 
 
 Selected highlights (SLM win % against commercial LLMs):
 
-| SLM | vs Gemini-2.5-Flash | vs GPT-4.1 | vs Virtuoso-Large |
-|---|---|---|---|
-| LLaMA-3.1-8B-Instruct | **52.9%** | 19.0% | 28.0% |
-| Qwen-3-8B-Instruct | **55.8%** | 23.8% | 31.9% |
-| LLaMA-3.2-3B-Instruct | 49.7% | 17.9% | 24.6% |
-| Qwen-3-4B-Instruct | 45.0% | 14.6% | 21.8% |
-| Phi-4-Mini (3.8B) | 43.9% | 14.9% | 19.9% |
+### Pairwise LLM vs. SLM Evaluation
+
+| LLM | SLM | LLM Wins (%) | SLM Wins (%) | Ties (%) |
+| :--- | :--- | :---: | :---: | :---: |
+| Gemini-2.5-Flash | LLaMA-3.2-1B-Instruct | 43.10 | 38.60 | 18.30 |
+| Gemini-2.5-Flash | Qwen-3-1.7B-Instruct | 49.80 | 33.50 | 16.70 |
+| Gemini-2.5-Flash | LLaMA-3.2-3B-Instruct | 37.40 | 49.70 | 12.90 |
+| Gemini-2.5-Flash | Phi-4-Mini (3.8B) | 40.50 | 43.90 | 15.60 |
+| Gemini-2.5-Flash | Qwen-3-4B-Instruct | 41.20 | 45.00 | 13.80 |
+| Gemini-2.5-Flash | LLaMA-3.1-8B-Instruct | 28.60 | 52.90 | 18.50 |
+| Gemini-2.5-Flash | Qwen-3-8B-Instruct | 26.60 | 55.80 | 17.60 |
+| GPT-4.1 | LLaMA-3.2-1B-Instruct | 68.60 | 15.70 | 15.70 |
+| GPT-4.1 | Qwen-3-1.7B-Instruct | 79.00 | 8.70 | 12.30 |
+| GPT-4.1 | LLaMA-3.2-3B-Instruct | 67.00 | 17.90 | 15.10 |
+| GPT-4.1 | Phi-4-Mini (3.8B) | 72.50 | 14.90 | 12.60 |
+| GPT-4.1 | Qwen-3-4B-Instruct | 70.90 | 14.60 | 14.50 |
+| GPT-4.1 | LLaMA-3.1-8B-Instruct | 61.30 | 19.00 | 19.70 |
+| GPT-4.1 | Qwen-3-8B-Instruct | 54.20 | 23.80 | 22.00 |
+| Virtuoso-Large | LLaMA-3.2-1B-Instruct | 61.60 | 19.80 | 18.60 |
+| Virtuoso-Large | Qwen-3-1.7B-Instruct | 73.40 | 12.80 | 13.80 |
+| Virtuoso-Large | LLaMA-3.2-3B-Instruct | 56.90 | 24.60 | 18.50 |
+| Virtuoso-Large | Phi-4-Mini (3.8B) | 64.70 | 19.90 | 15.40 |
+| Virtuoso-Large | Qwen-3-4B-Instruct | 62.60 | 21.80 | 15.60 |
+| Virtuoso-Large | LLaMA-3.1-8B-Instruct | 54.70 | 28.00 | 17.30 |
+| Virtuoso-Large | Qwen-3-8B-Instruct | 46.70 | 31.90 | 21.40 |
+
+*Pairwise LLM vs. SLM evaluation results expressed as win percentages.*
 
 LLaMA-3.1-8B and Qwen-3-8B both outperform Gemini-2.5-Flash in direct pairwise comparisons. No SLM exceeds GPT-4.1 or Virtuoso-Large in win rate.
 
