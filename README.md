@@ -117,7 +117,7 @@ The synthetic dataset is constructed from the Hugging Face TalkMap Customer Serv
 
  ## Model Training & Inference
 
- ![QLoRA training pipeline](figures/qlora.png)
+ ![QLoRA training pipeline](figures/qlorapipeline.png)
 
 **Parameter-Efficient Fine-Tuning (QLoRA):**
 All Small Language Models (SLMs) were adapted using Quantized Low-Rank Adaptation (QLoRA) to enable efficient domain adaptation on constrained hardware.
