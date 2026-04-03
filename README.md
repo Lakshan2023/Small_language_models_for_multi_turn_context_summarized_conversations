@@ -416,6 +416,35 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
   1. **Information Accuracy:** Correctly capturing key facts (names, accounts, dates, verification steps).
   2. **Structural Clarity:** Logical and clear organization of the client's issue and current status.
   3. **Faithfulness:** Strict adherence to the original conversation without introducing unsupported assumptions.
+ 
+ ### Quantitative Evaluation: Context Summary Generation
+
+| Model | BLEU (↑) | METEOR (↑) | ROUGE-L (↑) | Cosine Sim. (↑) | BERTScore F1 (↑) | BARTScore (↑) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| LLaMA-3.2-3B-Instruct | 0.3663 | 0.5976 | 0.5305 | 0.9255 | 0.9321 | -1.9362 |
+| Phi-4-Mini | 0.3620 | 0.5804 | 0.5159 | 0.9147 | 0.9309 | -1.9466 |
+| Qwen3-4B-Instruct | 0.3753 | 0.6000 | 0.5332 | 0.9201 | 0.9324 | -1.9236 |
+| LLaMA-3.1-8B-Instruct | 0.3791 | 0.6175 | 0.5486 | 0.9264 | 0.9346 | -1.8701 |
+| Qwen3-8B-Instruct | **0.4021** | **0.6179** | **0.5609** | **0.9286** | **0.9363** | **-1.8455** |
+| Gemini-2.5-Flash | 0.2652 | 0.4730 | 0.4511 | 0.8656 | 0.9194 | -2.1386 |
+| GPT-4.1 | 0.2998 | 0.5470 | 0.4706 | 0.9117 | 0.9241 | -2.1292 |
+
+*Lexical and semantic similarity results for context summary generation. Models are grouped by size: small models (<4B), 8B models, and commercial LLMs.*
+
+
+### Qualitative Evaluation (LLM-as-a-Judge): Context Summary Generation
+
+| Model | Information Accuracy (↑) | Structural Clarity (↑) | Faithfulness (↑) | Overall Score (↑) |
+| :--- | :---: | :---: | :---: | :---: |
+| LLaMA-3.2-3B-Instruct | 4.5816 | 4.8398 | 4.4825 | 4.6346 |
+| Phi-4-Mini | 4.6300 | 4.8760 | 4.5390 | 4.6817 |
+| Qwen3-4B-Instruct | 4.6580 | 4.8760 | 4.5640 | 4.6993 |
+| LLaMA-3.1-8B-Instruct | 4.6897 | 4.9039 | 4.6296 | 4.7411 |
+| Qwen3-8B-Instruct | 4.6927 | 4.8959 | 4.6256 | 4.7381 |
+| Gemini-2.5-Flash | **4.7930** | 4.9300 | **4.7700** | 4.8310 |
+| GPT-4.1 | 4.8060 | **4.9480** | 4.7510 | **4.8350** |
+
+*LLM-as-a-Judge qualitative evaluation results for multi-turn customer service context summarization using a 1–5 Likert scale. Scores represent the average across 1,000 evaluation instances for each model.*
 
 
 ## Citation
