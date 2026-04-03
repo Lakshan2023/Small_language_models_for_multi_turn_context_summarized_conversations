@@ -340,8 +340,6 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 ---
 
----
-
 ### Inference Efficiency (NVIDIA A100 — 1,000 test instances)
 
 | Model | Avg Latency (s) | Avg TTFT (s) | GPU Memory (GB) | Disk (GB) |
