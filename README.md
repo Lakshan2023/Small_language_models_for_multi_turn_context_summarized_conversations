@@ -307,6 +307,39 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 ---
 
+### Conversation Stage-based Pairwise Evaluation Results
+
+| Tested SLM | Early (LLM%) | Early (SLM%) | Early (Tie%) | Mid (LLM%) | Mid (SLM%) | Mid (Tie%) | Late (LLM%) | Late (SLM%) | Late (Tie%) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **vs. GPT-4.1** | | | | | | | | | |
+| LLaMA-3.2-1B-Instruct | 65.66 | 17.17 | 17.17 | 72.01 | 12.94 | 15.05 | 43.30 | 37.11 | 19.59 |
+| Qwen-3-1.7B-Instruct | 75.76 | 11.11 | 13.13 | 82.34 | 6.84 | 10.82 | 54.64 | 21.65 | 23.71 |
+| LLaMA-3.2-3B-Instruct | 72.73 | 18.18 | 9.09 | 67.91 | 16.54 | 15.55 | 53.61 | 28.87 | 17.53 |
+| Phi-4-Mini (3.8B) | 71.72 | 13.13 | 15.15 | 74.75 | 13.68 | 11.57 | 54.64 | 26.80 | 18.56 |
+| Qwen-3-4B-Instruct | 66.67 | 14.14 | 19.19 | 72.89 | 13.43 | 13.68 | 58.76 | 24.74 | 16.49 |
+| LLaMA-3.1-8B-Instruct | 54.55 | 22.22 | 23.23 | 64.05 | 18.16 | 17.79 | 45.36 | 22.68 | 31.96 |
+| Qwen-3-8B-Instruct | 54.55 | 19.19 | 26.26 | 54.35 | 24.25 | 21.39 | 52.58 | 24.74 | 22.68 |
+| **vs. Virtuoso-Large** | | | | | | | | | |
+| LLaMA-3.2-1B-Instruct | 57.58 | 25.25 | 17.17 | 64.43 | 17.29 | 18.28 | 42.27 | 35.05 | 22.68 |
+| Qwen-3-1.7B-Instruct | 65.66 | 14.14 | 20.20 | 76.37 | 12.81 | 10.82 | 56.70 | 11.34 | 31.96 |
+| LLaMA-3.2-3B-Instruct | 58.59 | 27.27 | 14.14 | 57.84 | 23.63 | 18.53 | 47.42 | 29.90 | 22.68 |
+| Phi-4-Mini (3.8B) | 57.58 | 26.26 | 16.16 | 67.79 | 18.91 | 13.31 | 46.39 | 21.65 | 31.96 |
+| Qwen-3-4B-Instruct | 56.57 | 27.27 | 16.16 | 65.17 | 20.52 | 14.30 | 47.42 | 26.80 | 25.77 |
+| LLaMA-3.1-8B-Instruct | 47.47 | 34.34 | 18.18 | 57.21 | 26.12 | 16.67 | 41.24 | 37.11 | 21.65 |
+| Qwen-3-8B-Instruct | 49.49 | 31.31 | 19.19 | 45.27 | 33.33 | 21.39 | 55.67 | 20.62 | 23.71 |
+| **vs. Gemini-2.5-Flash** | | | | | | | | | |
+| LLaMA-3.2-1B-Instruct | 49.49 | 35.35 | 15.15 | 43.91 | 38.68 | 17.41 | 29.90 | 41.24 | 28.87 |
+| Qwen-3-1.7B-Instruct | 56.57 | 28.28 | 15.15 | 49.50 | 34.08 | 16.42 | 45.36 | 34.02 | 20.62 |
+| LLaMA-3.2-3B-Instruct | 42.42 | 44.44 | 13.13 | 36.82 | 50.62 | 12.56 | 37.11 | 47.42 | 15.46 |
+| Phi-4-Mini (3.8B) | 45.45 | 37.37 | 17.17 | 40.67 | 43.66 | 15.67 | 34.02 | 52.58 | 13.40 |
+| Qwen-3-4B-Instruct | 49.49 | 36.36 | 14.14 | 40.67 | 46.02 | 13.31 | 37.11 | 45.36 | 17.53 |
+| LLaMA-3.1-8B-Instruct | 31.31 | 40.40 | 28.28 | 26.99 | 55.97 | 17.04 | 39.18 | 40.21 | 20.62 |
+| Qwen-3-8B-Instruct | 44.44 | 38.38 | 17.17 | 23.13 | 60.45 | 16.42 | 37.11 | 35.05 | 27.84 |
+
+*Win and tie percentages for pairwise comparisons between selected high-performing SLMs and commercial LLMs across Early, Mid, and Late conversation stages, using Claude Haiku 4.5 as the judge.*
+
+---
+
 ---
 
 ### Inference Efficiency (NVIDIA A100 — 1,000 test instances)
