@@ -179,7 +179,7 @@ Fine-tuned SLMs consistently outperform commercial LLMs on quantitative metrics 
 
 ### Human Evaluation (3 Independent Evaluators — 500 samples per model, 1–5 Likert scale)
 
--| Model | Human Likeness | Continuity & Context Understanding | Tone & Clarity | Task Appropriateness | Overall Mean |
+| Model | Human Likeness | Continuity & Context Understanding | Tone & Clarity | Task Appropriateness | Overall Mean |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | SmolLM3-3B | 3.003 | 2.615 | 2.965 | 2.261 | 2.711 |
 | LLaMA-3.2-3B-Instruct | 4.250 | 4.325 | 4.286 | 3.721 | 4.146 |
