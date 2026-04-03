@@ -395,6 +395,8 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 ## Ablation Study: SLM-based Context Summarization
 
+ ![Context summarization QLoRA training pipeline](figures/context_summarization_qlora_pipeline.png)
+
 **Goal:** To determine whether fine-tuned SLMs can effectively replace commercial LLMs in generating accurate and coherent context summaries for multi-turn customer service conversations.
 
 **Models Evaluated:** LLaMA-3.1-8B-Instruct, LLaMA-3.2-3B-Instruct, Phi-4-Mini, Qwen-3-4B-Instruct, and Qwen-3-8B-Instruct (evaluated against Gemini-2.5-Flash and GPT-4.1).
