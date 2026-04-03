@@ -114,6 +114,12 @@ The synthetic dataset is constructed from the Hugging Face TalkMap Customer Serv
 5. **Structured Instance Formation:** Assembled standard QA instances (instruction, summarized history, current query, refined response) and divided them into standard splits.
 
  The created dataset is publicly available at: [Lakshan2003/customer-support-client-agent-conversations](https://huggingface.co/datasets/Lakshan2003/customer-support-client-agent-conversations).
+ 
+**Dataset Statistics:**
+- Training: 128,335 samples
+- Validation: 18,333 samples  
+- Test: 36,669 samples
+- Average turns per conversation: ~10
 
  ## Model Training & Inference
 
@@ -130,6 +136,39 @@ Inference was conducted on the full test split (36,669 instances) using a maximu
 - **SLM Decoding:** Configured based on publisher recommendations for stability. 
 - **Commercial LLM Decoding:** API-based inference for GPT-4.1, Gemini-2.5-Flash, and Virtuoso-Large standardized at Temp 0.7 and Top-p 0.9. 
 - **Reasoning Constraint:** Gemini-2.5-Flash's explicit reasoning behavior was disabled (thinking budget = 0) to align with the direct instruction-following setup of the SLMs.
+
+## Evaluation Metrics
+
+### Automatic Metrics
+- **Lexical**: ROUGE-L, METEOR
+- **Semantic**: BERTScore, BARTScore, Cosine Similarity
+
+### Qualitative Assessment
+- **LLM-as-a-Judge**: Using Claude Sonnet 4.5
+- **Human Evaluation**: 3 independent evaluators
+- **Pairwise Comparison**: Using Claude Haiku 4.5
+
+### Evaluation Dimensions
+1. Human-Likeness
+2. Continuity and Context Understanding
+3. Tone and Clarity
+4. Task Appropriateness
+
+## Stage-Based Evaluation
+
+A key contribution of this work is the **conversation stage-based evaluation framework** that segments interactions into three distinct phases:
+
+### Conversation Stages
+- **Early Stage (10%)**: Issue identification and initial context gathering
+- **Mid Stage (80%)**: Core interaction with substantive information exchange — most challenging phase requiring strongest contextual reasoning
+- **Late Stage (10%)**: Resolution and closure
+
+### Stage-Based Insights
+- **Early Stage**: Top SLMs show moderate competitiveness in issue identification (LLM-as-a-Judge scores: 3.7–3.8)
+- **Mid Stage**: Most challenging phase — largest gaps observed in Continuity, Context Understanding and Task Appropriateness; LLaMA-3.1-8B and Qwen-3-8B maintain the strongest SLM performance
+- **Late Stage**: SLMs demonstrate their strongest results; LLaMA-3.2-3B-Instruct, Phi-4-Mini and Qwen-3-4B-Instruct exceed Gemini-2.5-Flash under human evaluation (scores above 4.5)
+
+This segmentation enables targeted analysis beyond overall performance scores, identifying which models excel at specific conversation phases.
 
 ## Key Results (Summary)
 
@@ -354,64 +393,6 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 *Inference performance metrics across different model sizes. Models are grouped by size: small models (<4B) and 8B models. Lower values indicate better performance for all metrics.*
 
-
-
-## Dataset
-
-The dataset is constructed from the Customer Service Banking Conversation Corpus, processed through:
-1. Multi-turn conversation construction
-2. Context summarization using GPT-4o-mini
-3. Response refinement using GPT-4.1
-4. Content moderation filtering
-
-**Dataset Statistics:**
-- Training: 128,335 samples
-- Validation: 18,333 samples  
-- Test: 36,669 samples
-- Average turns per conversation: ~10
-
-## Evaluation Metrics
-
-### Automatic Metrics
-- **Lexical**: ROUGE-L, METEOR
-- **Semantic**: BERTScore, BARTScore, Cosine Similarity
-
-### Qualitative Assessment
-- **LLM-as-a-Judge**: Using Claude Sonnet 4.5
-- **Human Evaluation**: 3 independent evaluators
-- **Pairwise Comparison**: Using Claude Haiku 4.5
-
-### Evaluation Dimensions
-1. Human-Likeness
-2. Continuity and Context Understanding
-3. Tone and Clarity
-4. Task Appropriateness
-
-## Stage-Based Evaluation
-
-A key contribution of this work is the **conversation stage-based evaluation framework** that segments interactions into three distinct phases:
-
-### Conversation Stages
-- **Early Stage (10%)**: Issue identification and initial context gathering
-- **Mid Stage (80%)**: Core interaction with substantive information exchange — most challenging phase requiring strongest contextual reasoning
-- **Late Stage (10%)**: Resolution and closure
-
-### Stage-Based Insights
-- **Early Stage**: Top SLMs show moderate competitiveness in issue identification (LLM-as-a-Judge scores: 3.7–3.8)
-- **Mid Stage**: Most challenging phase — largest gaps observed in Continuity, Context Understanding and Task Appropriateness; LLaMA-3.1-8B and Qwen-3-8B maintain the strongest SLM performance
-- **Late Stage**: SLMs demonstrate their strongest results; LLaMA-3.2-3B-Instruct, Phi-4-Mini and Qwen-3-4B-Instruct exceed Gemini-2.5-Flash under human evaluation (scores above 4.5)
-
-This segmentation enables targeted analysis beyond overall performance scores, identifying which models excel at specific conversation phases.
-
-## Training Configuration
-
-- **Method**: QLoRA (4-bit quantization + LoRA)
-- **LoRA Rank**: 16, Alpha: 32, Dropout: 0.1
-- **Optimizer**: AdamW 8-bit
-- **Learning Rate**: 2×10⁻⁵
-- **Epochs**: 3
-- **Max Sequence Length**: 512 tokens
-- **Hardware**: NVIDIA RTX A100 40GB
 
 ## Citation
 
