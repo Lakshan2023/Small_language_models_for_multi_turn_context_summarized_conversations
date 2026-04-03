@@ -340,18 +340,19 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 ---
 
-### Inference Efficiency (NVIDIA A100 — 1,000 test instances)
+| Model | Avg Latency (s) (↓) | Avg TTFT (s) (↓) | Avg GPU Memory (GB) (↓) | Avg Disk Storage (GB) (↓) | Avg Time per Token (s) (↓) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Llama-3.2-1B-Instruct | **0.94** | **0.02** | **2.36** | **2.35** | **0.02** |
+| Qwen3-1.7B-Instruct | 1.83 | 0.05 | 3.90 | 3.87 | 0.04 |
+| LLaMA-3.2-3B-Instruct | 1.59 | 0.04 | 6.11 | 6.08 | 0.04 |
+| SmolLM3-3B | 2.09 | 0.05 | 5.82 | 5.86 | 0.04 |
+| Phi-4-Mini | 2.07 | 0.06 | 7.30 | 7.20 | 0.05 |
+| Qwen3-4B-Instruct | 2.32 | 0.06 | 7.70 | 7.63 | 0.06 |
+| Gemma-3-4B-Instruct | 4.14 | 0.08 | 24.40 | 8.17 | 0.07 |
+| LLaMA-3.1-8B-Instruct | 1.81 | 0.04 | 15.10 | 15.12 | 0.04 |
+| Qwen3-8B-Instruct | 2.44 | 0.06 | 15.42 | 15.44 | 0.06 |
 
-| Model | Avg Latency (s) | Avg TTFT (s) | GPU Memory (GB) | Disk (GB) |
-|---|---|---|---|---|
-| LLaMA-3.2-1B-Instruct | **0.94** | **0.02** | **2.36** | 2.35 |
-| LLaMA-3.2-3B-Instruct | 1.59 | 0.04 | 6.11 | 6.08 |
-| LLaMA-3.1-8B-Instruct | 1.81 | 0.04 | 15.10 | 15.12 |
-| Phi-4-Mini | 2.07 | 0.06 | 7.30 | 7.20 |
-| Qwen-3-4B-Instruct | 2.32 | 0.06 | 7.70 | 7.63 |
-| Gemma-3-4B-Instruct | 4.14 | 0.08 | 24.40 | 8.17 |
-
-LLaMA-3.2-3B-Instruct offers the best balance of conversational quality and efficiency among <4B models (1.59s latency, 6.11GB GPU memory).
+*Inference performance metrics across different model sizes. Models are grouped by size: small models (<4B) and 8B models. Lower values indicate better performance for all metrics.*
 
 
 
