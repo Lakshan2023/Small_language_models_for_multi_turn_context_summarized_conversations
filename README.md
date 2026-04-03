@@ -274,6 +274,40 @@ LLaMA-3.1-8B and Qwen-3-8B both outperform Gemini-2.5-Flash in direct pairwise c
 SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactions. LLaMA-3.1-8B-Instruct surpasses Gemini-2.5-Flash in Late-stage (4.229 vs 3.818).
 
 ---
+### Conversation Stage-based Human Evaluation Results
+
+| Stage | Model | Human Likeness | Continuity & Context | Tone & Clarity | Task Appropriateness | Overall Mean |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Early-Stage** | LLaMA-3.2-3B-Instruct | 4.107 | 4.227 | 4.093 | 3.593 | 4.005 |
+| | SmolLM3-3B | 2.513 | 2.173 | 2.487 | 1.833 | 2.252 |
+| | Qwen-3-4B-Instruct | 4.073 | 4.060 | 4.093 | 3.433 | 3.915 |
+| | Phi-4-Mini | 3.940 | 4.147 | 4.000 | 3.440 | 3.882 |
+| | Gemma-3-4B-Instruct | 3.013 | 2.360 | 2.887 | 1.953 | 2.553 |
+| | GPT-4.1 | **4.467** | **4.753** | **4.540** | **4.073** | **4.458** |
+| | Virtuoso-Large | 4.353 | 4.680 | 4.507 | 4.100 | 4.410 |
+| | Gemini-2.5-Flash | 4.187 | 4.527 | 4.240 | 3.933 | 4.222 |
+| **Mid-stage** | LLaMA-3.2-3B-Instruct | 4.217 | 4.291 | 4.258 | 3.650 | 4.104 |
+| | SmolLM3-3B | 3.098 | 2.694 | 3.059 | 2.323 | 2.793 |
+| | Qwen-3-4B-Instruct | 4.164 | 4.249 | 4.197 | 3.510 | 4.030 |
+| | Phi-4-Mini | 4.138 | 4.274 | 4.187 | 3.478 | 4.019 |
+| | Gemma-3-4B-Instruct | 3.141 | 2.531 | 3.002 | 2.143 | 2.704 |
+| | GPT-4.1 | **4.675** | **4.846** | **4.725** | **4.283** | **4.632** |
+| | Virtuoso-Large | 4.489 | 4.723 | 4.631 | 4.223 | 4.517 |
+| | Gemini-2.5-Flash | 4.159 | 4.583 | 4.233 | 3.731 | 4.177 |
+| **Late-stage** | LLaMA-3.2-3B-Instruct | 4.660 | 4.700 | 4.700 | 4.420 | 4.620 |
+| | SmolLM3-3B | 2.733 | 2.427 | 2.693 | 2.193 | 2.512 |
+| | Qwen-3-4B-Instruct | 4.640 | 4.587 | 4.627 | 4.273 | 4.532 |
+| | Phi-4-Mini | 4.593 | 4.687 | 4.653 | 4.260 | 4.548 |
+| | Gemma-3-4B-Instruct | 2.960 | 2.593 | 2.780 | 2.360 | 2.673 |
+| | GPT-4.1 | **4.867** | **4.753** | **4.880** | **4.520** | **4.755** |
+| | Virtuoso-Large | 4.800 | 4.793 | 4.820 | 4.600 | 4.753 |
+| | Gemini-2.5-Flash | 4.347 | 4.480 | 4.367 | 3.920 | 4.278 |
+
+*Stage-wise human evaluation results across early, mid, and late-stage customer-service interactions using a 5-point Likert scale. Scores are averaged over 500 evaluation samples per model, consisting of 50 early-stage, 400 mid-stage, and 50 late-stage instances.*
+
+---
+
+---
 
 ### Inference Efficiency (NVIDIA A100 — 1,000 test instances)
 
