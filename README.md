@@ -446,6 +446,12 @@ SLMs perform **weakest in Mid-stage** and **strongest in Late-stage** interactio
 
 *LLM-as-a-Judge qualitative evaluation results for multi-turn customer service context summarization using a 1–5 Likert scale. Scores represent the average across 1,000 evaluation instances for each model.*
 
+## Experiments, Models and Datasets
+
+All experiments conducted in this study, including fine-tuned models, inference outputs and constructed datasets, are publicly available at the following repository:
+
+Hugging Face: https://huggingface.co/Lakshan2003
+
 
 ## Citation
 
@@ -469,4 +475,4 @@ This project is intended for research purposes.
 
 ## Acknowledgments
 
-We thank the human evaluators and the funding team for supporting API usage for large-scale model inference and evaluation.
+We thank the human evaluators and the Zame AI team for supporting API usage for large-scale model inference and evaluation.
