@@ -471,7 +471,7 @@ If you use this work, please cite:
 
 ## License
 
-This project is intended for research purposes.
+This project is intended for research purposes.For commercial Usage Please contact the author.
 
 ## Acknowledgments
 
