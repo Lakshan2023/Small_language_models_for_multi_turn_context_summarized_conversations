@@ -288,15 +288,25 @@ Hugging Face: https://huggingface.co/Lakshan2003
 If you use this work, please cite:
 
 ```bibtex
-@misc{cooray2026smalllanguagemodelshandle,
-      title={Can Small Language Models Handle Context-Summarized Multi-Turn Customer-Service QA? A Synthetic Data-Driven Comparative Evaluation}, 
-      author={Lakshan Cooray and Deshan Sumanathilaka and Pattigadapa Venkatesh Raju},
-      year={2026},
-      eprint={2602.00665},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2602.00665}, 
-}
+@ARTICLE{10.3389/frai.2026.1804284,
+    
+AUTHOR={Cooray, Lakshan  and Sumanathilaka, Deshan K. and Venkatesh Raju, Pattigadapa },
+           
+TITLE={Can small language models handle context-summarized multi-turn customer-service QA? A synthetic data-driven comparative evaluation},
+          
+JOURNAL={Frontiers in Artificial Intelligence},
+          
+VOLUME={Volume 9 - 2026},
+  
+YEAR={2026},
+  
+URL={https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1804284},
+  
+DOI={10.3389/frai.2026.1804284},
+  
+ISSN={2624-8212},
+  
+ABSTRACT={Customer-service question answering (QA) systems increasingly rely on conversational language understanding. While Large Language Models (LLMs) achieve strong performance, their high computational cost and deployment constraints limit practical use in resource-constrained environments. Small Language Models (SLMs) provide a more efficient alternative, yet their effectiveness for multi-turn customer-service QA remains underexplored, particularly in scenarios requiring dialogue continuity and contextual understanding. In this study, we evaluate whether instruction-tuned SLMs, fine-tuned using parameter-efficient finetuning, can effectively handle context-summarized multi-turn customer-service QA while preserving contextual consistency, response quality and task relevance under computational constraints. We further investigate instruction-tuned SLMs for context-summarized multi-turn customer-service QA using a history summarization strategy to preserve essential conversational state and introduce a conversation stage-based qualitative analysis to evaluate model behavior across different phases of customer-service interactions. The main contributions of this work include the application of parameter-efficient fine-tuning to adapt SLMs for context-summarized multi-turn customer-service QA, a synthetic data construction pipeline for generating a context-summarized multi-turn QA dataset, and a structured evaluation framework combining quantitative metrics with human and LLM-as-a-judge assessments for customer-service QA evaluation. Nine instruction-tuned SLMs are evaluated against three commercial LLMs using lexical and semantic similarity metrics alongside qualitative assessments, including human evaluation and LLM-as-a-judge methods. Results show notable variation across SLMs, with some models demonstrating near-LLM performance, while others struggle to maintain dialogue continuity and contextual alignment. These findings highlight both the potential and current limitations of low-parameter language models for real-world customer-service QA systems.}}
 ```
 
 ## License
